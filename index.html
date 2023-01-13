@@ -5,53 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
+    <title>Document</title>
 </head>
 
-<body class="main">
-    <header class="section section1 header active" id="home">
-        <div class="header-content">
-            <h1>
-                Hi, I'm <span>Roy Zhou.</span>
-                An aspiring software engineer.
-            </h1>
-            <p>
-                INSERT BIO PARAGRAPH
-            </p>
-        </div>
-    </header>
-    <main>
-        <section class="section section2 about" id="about"></section>
-        <section class="section section3 portfolio" id="portfolio"></section>
-        <section class="section section4 blogs" id="blogs"></section>
-        <section class="section section5 contact" id="contact"></section>
-    </main>
-
-    <div class="buttons">
-        <div class="button control1 active-button" data-id="home">
-            <i class="fa-solid fa-house" data-id="home"></i>
-        </div>
-        <div class="button control2" data-id="about">
-            <i class="fa-solid fa-user" data-id="about"></i>
-        </div>
-        <div class="button control3" data-id="portfolio">
-            <i class="fa-solid fa-file-lines" data-id="portfolio"></i>
-        </div>
-        <div class="button control4" data-id="blogs">
-            <i class="fa-solid fa-newspaper" data-id="blogs"></i>
-        </div>
-        <div class="button control5" data-id="contact">
-            <i class="fa-solid fa-address-book" data-id="contact"></i>
-        </div>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav>
+                <div class="menu">
+                    <ul>
+                        <li><a href="#home">HOME</a></li>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#portfolio">PORTFOLIO</a></li>
+                        <li><a href="#blogs">BLOGS</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
     </div>
-    <script src='app.js'></script>
+
+    <section id="home">
+        <h1>Hi, I'm Roy. Welcome to my portfolio</h1>
+    </section>
+
+    <section id="about">
+        <h1>About</h1>
+    </section>
+
+    <section id="portfolio">
+        <h1>Portfolio</h1>
+    </section>
+
+    <section id="blogs">
+        <h1>Blogs</h1>
+    </section>
+
+    <section id="contact">
+        <h1>Contact</h1>
+    </section>
 </body>
 
 </html>
