@@ -6,7 +6,7 @@
 }
 
 :root {
-  --color-primary: #191d2b;
+  --color-primary: #252839;
   --color-secondary: #27ae60;
   --color-gray0: #f8f8f8;
   --color-gray1: #bde1e8;
@@ -47,9 +47,28 @@ nav {
 
       a {
         font-family: sans-serif;
+
+        position: relative;
         text-decoration: none;
-        color: white;
+        line-height: 1.5em;
         letter-spacing: 2px;
+        text-transform: uppercase;
+        color: white;
+      }
+
+      a::before {
+        content: attr(data-text);
+        position: absolute;
+        color: var(--color);
+        width: 0;
+        overflow: hidden;
+        transition: 0.5s;
+        border-right: 4px solid var(--color);
+        -webkit-text-stroke: 1px var(--color);
+      }
+
+      a:hover::before {
+        width: 100%;
       }
     }
   }
@@ -102,7 +121,7 @@ body {
   p {
     position: relative;
     left: 50%;
-    top: 110%;
+    top: 80%;
     transform: translateX(-50%);
     width: 68rem;
     font-size: 20px;
@@ -120,5 +139,4 @@ body {
       }
     }
   }
-
 }
