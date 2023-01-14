@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Montserrat&family=Poppins:ital@1&display=swap");
+* {
+  margin: 0;
+  font-family: "Montserrat";
+}
+
+:root {
+  --color-primary: #191d2b;
+  --color-secondary: #27ae60;
+  --color-gray0: #f8f8f8;
+  --color-gray1: #bde1e8;
+  --color-gray2: #b2becd;
+  --color-gray3: #6c7983;
+  --color-gray4: #454e56;
+  --color-gray5: #2a2e35;
+  --color-gray6: #12181b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: -10%;
+  background-color: var(--color-primary);
+  -webkit-animation-name: fadeInNav;
+          animation-name: fadeInNav;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes fadeInNav {
+  100% {
+    top: 0%;
+  }
+}
+@keyframes fadeInNav {
+  100% {
+    top: 0%;
+  }
+}
+nav ul {
+  text-align: right;
+}
+nav ul li {
+  display: inline-block;
+  padding: 20px;
+}
+nav ul li a {
+  font-family: sans-serif;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 2px;
+}
+
+body {
+  background-color: var(--color-primary);
+}
+
+#home,
+#experience,
+#projects,
+#blogs,
+#contact {
+  height: 1000px;
+  color: white;
+}
+
+#home h1 {
+  position: relative;
+  z-index: -1;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+  font-size: 60px;
+  width: 27.4ch;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  -webkit-animation: typing 3s steps(40), blinking 0.5s step-end infinite alternate;
+          animation: typing 3s steps(40), blinking 0.5s step-end infinite alternate;
+}
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@-webkit-keyframes blinking {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes blinking {
+  50% {
+    border-color: transparent;
+  }
+}
+#home p {
+  position: relative;
+  left: 50%;
+  top: 110%;
+  transform: translateX(-50%);
+  width: 68rem;
+  font-size: 20px;
+  opacity: 0;
+  -webkit-animation-name: fadeInBio;
+          animation-name: fadeInBio;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes fadeInBio {
+  100% {
+    opacity: 1;
+    top: 40%;
+  }
+}
+@keyframes fadeInBio {
+  100% {
+    opacity: 1;
+    top: 40%;
+  }
+}/*# sourceMappingURL=styles.css.map */
