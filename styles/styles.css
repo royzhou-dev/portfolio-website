@@ -14,6 +14,7 @@
   --color-gray4: #454e56;
   --color-gray5: #2a2e35;
   --color-gray6: #12181b;
+  --color-home: #00ade1;
 }
 
 html {
@@ -53,6 +54,7 @@ nav ul li {
 }
 nav ul li a {
   font-family: sans-serif;
+  font-size: 1em;
   position: relative;
   text-decoration: none;
   line-height: 1.5em;
@@ -149,4 +151,34 @@ body {
     opacity: 1;
     top: 40%;
   }
+}
+#home p button {
+  position: relative;
+  text-align: center;
+  background: none;
+  border: 2px solid var(--color-home);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: sans-serif;
+  padding: 12px 40px;
+  cursor: pointer;
+  color: white;
+  margin-top: 10px;
+}
+#home p button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-home);
+  z-index: -1;
+  transition: transform 0.7s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  transform: scaleX(0);
+}
+#home p button:hover::before {
+  transform: scaleX(1);
 }/*# sourceMappingURL=styles.css.map */
