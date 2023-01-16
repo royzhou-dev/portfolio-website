@@ -6,28 +6,28 @@
 }
 
 :root {
-  --color-primary: #252839;
-  --color-secondary: #27ae60;
-  --color-gray0: #f8f8f8;
-  --color-gray1: #bde1e8;
-  --color-gray2: #b2becd;
-  --color-gray3: #6c7983;
-  --color-gray4: #454e56;
-  --color-gray5: #2a2e35;
-  --color-gray6: #12181b;
+  --color-background: #171c28;
 
   --color-home: #00ade1;
+  --color-experience: #ff6493;
+  --color-projects: #ffdd1c;
+  --color-contact: #00dc82;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: var(--color-background);
+}
+
 nav {
   position: fixed;
   width: 100%;
   top: -10%;
-  background-color: var(--color-primary);
+  background-color: var(--color-background);
+  z-index: 10;
 
   animation-name: fadeInNav;
   animation-duration: 1s;
@@ -76,26 +76,20 @@ nav {
   }
 }
 
-body {
-  background-color: var(--color-primary);
-}
-
 #home,
 #experience,
 #projects,
-#blogs,
 #contact {
   height: 1000px;
   color: white;
+  margin-left: 30rem;
+  margin-right: 30rem;
 }
 
 #home {
   h1 {
-    position: relative;
-    z-index: -1;
-    left: 50%;
+    position: absolute;
     top: 40%;
-    transform: translateX(-50%);
 
     font-size: 60px;
     width: 27.4ch;
@@ -104,7 +98,8 @@ body {
     border-right: 3px solid;
 
     animation: typing 3s steps(40),
-      blinking 0.5s step-end infinite alternate;
+      blinking 0.5s step-end infinite alternate,
+      shiftUp 0.5s ease-in-out 3s 1 normal forwards;
 
     @keyframes typing {
       from {
@@ -117,16 +112,21 @@ body {
         border-color: transparent
       }
     }
+
+    @keyframes shiftUp {
+      100% {
+        top: 30%;
+      }
+    }
   }
 
   p {
-    position: relative;
-    left: 50%;
-    top: 80%;
-    transform: translateX(-50%);
-    width: 68rem;
-    font-size: 20px;
+    position: absolute;
+    top: 110%;
     opacity: 0;
+
+    width: 68rem;
+    font-size: 22px;
 
     animation-name: fadeInBio;
     animation-duration: 1s;
@@ -143,15 +143,18 @@ body {
     button {
       position: relative;
       text-align: center;
+      margin-top: 15px;
+      padding: 12px 40px;
+
       background: none;
       border: 2px solid var(--color-home);
+
       text-transform: uppercase;
       letter-spacing: 2px;
+      font-size: 1em;
       font-family: sans-serif;
-      padding: 12px 40px;
       cursor: pointer;
       color: white;
-      margin-top: 10px;
     }
 
     button::before {
@@ -161,8 +164,9 @@ body {
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: var(--color-home);
       z-index: -1;
+
+      background-color: var(--color-home);
       transition: transform 0.7s;
       transform-origin: 0 0;
       transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
@@ -172,7 +176,160 @@ body {
     button:hover::before {
       transform: scaleX(1);
     }
+  }
+}
 
+#experience {
+  h1 {
+    color: var(--color-experience);
+    position: relative;
+    top: 10%;
+  }
 
+  .tablist {
+    position: relative;
+    top: 15%;
+
+    width: 100%;
+    padding: 40px 50px 40px 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+    .tablist-title {
+      font-size: 30px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      color: var(--color-background);
+    }
+
+    .tablist-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .list {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        margin-right: 50px;
+        position: relative;
+
+        label {
+          height: 60px;
+          font-size: 22px;
+          font-weight: 500;
+          line-height: 60px;
+          cursor: pointer;
+          padding-left: 25px;
+          transition: all 0.5s ease;
+          color: var(--color-background);
+          z-index: 12;
+        }
+
+        label:hover {
+          color: var(--color-experience);
+        }
+      }
+
+      .indicator {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 60px;
+        width: 100%;
+        border-radius: 12px;
+        background: var(--color-experience);
+        transition: all 0.4s ease;
+      }
+
+      .text-content {
+        width: 80%;
+        height: 100%;
+
+        .text {
+          display: none;
+
+          .title {
+            font-size: 25px;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: var(--color-background);
+          }
+
+          p {
+            text-align: justify;
+            color: var(--color-background);
+          }
+        }
+
+        .job1 {
+          display: block;
+        }
+      }
+
+      input {
+        display: none;
+      }
+    }
+
+    #job1:checked~.list label.job1,
+    #job2:checked~.list label.job2,
+    #job3:checked~.list label.job3,
+    #job4:checked~.list label.job4,
+    #job5:checked~.list label.job5 {
+      color: #fff;
+    }
+
+    #job1:checked~.list .indicator {
+      top: 0;
+    }
+
+    #job2:checked~.list .indicator {
+      top: 60px;
+    }
+
+    #job3:checked~.list .indicator {
+      top: 120px;
+    }
+
+    #job4:checked~.list .indicator {
+      top: 180px;
+    }
+
+    #job5:checked~.list .indicator {
+      top: 240px;
+    }
+
+    #job1:checked~.text-content .job1,
+    #job2:checked~.text-content .job2,
+    #job3:checked~.text-content .job3,
+    #job4:checked~.text-content .job4,
+    #job5:checked~.text-content .job5 {
+      display: block;
+    }
+
+    #job2:checked~.text-content .job1,
+    #job3:checked~.text-content .job1,
+    #job4:checked~.text-content .job1,
+    #job5:checked~.text-content .job1 {
+      display: none;
+    }
+  }
+}
+
+#projects {
+  h1 {
+    color: var(--color-projects);
+    position: relative;
+    top: 10%;
+  }
+}
+
+#contact {
+  h1 {
+    color: var(--color-contact);
+    position: relative;
+    top: 10%;
   }
 }
