@@ -23,17 +23,9 @@ body {
 nav {
   position: fixed;
   width: 100%;
-  top: -10%;
+  top: 0%;
   background-color: var(--color-background);
   z-index: 10;
-  -webkit-animation-name: fadeInNav;
-          animation-name: fadeInNav;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
 @-webkit-keyframes fadeInNav {
   100% {
@@ -80,22 +72,19 @@ nav ul li a:hover::before {
 #experience,
 #projects,
 #contact {
+  position: relative;
   height: 1000px;
-  color: white;
-  margin-left: 30rem;
-  margin-right: 30rem;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
+#home {
+  color: white;
+}
 #home h1 {
-  position: absolute;
-  top: 40%;
+  position: relative;
+  top: 30%;
   font-size: 60px;
-  width: 27.4ch;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
-  -webkit-animation: typing 3s steps(40), blinking 0.5s step-end infinite alternate, shiftUp 0.5s ease-in-out 3s 1 normal forwards;
-          animation: typing 3s steps(40), blinking 0.5s step-end infinite alternate, shiftUp 0.5s ease-in-out 3s 1 normal forwards;
 }
 @-webkit-keyframes typing {
   from {
@@ -128,19 +117,10 @@ nav ul li a:hover::before {
   }
 }
 #home p {
-  position: absolute;
-  top: 110%;
-  opacity: 0;
-  width: 68rem;
+  position: relative;
+  top: 35%;
+  opacity: 1;
   font-size: 22px;
-  -webkit-animation-name: fadeInBio;
-          animation-name: fadeInBio;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
 @-webkit-keyframes fadeInBio {
   100% {
@@ -202,7 +182,6 @@ nav ul li a:hover::before {
 }
 #experience .tablist .tablist-title {
   font-size: 30px;
-  font-weight: 500;
   margin-bottom: 20px;
   color: var(--color-background);
 }
@@ -214,20 +193,20 @@ nav ul li a:hover::before {
 #experience .tablist .tablist-content .list {
   display: flex;
   flex-direction: column;
-  width: 20%;
+  width: 25%;
   margin-right: 50px;
   position: relative;
 }
 #experience .tablist .tablist-content .list label {
   height: 60px;
   font-size: 22px;
-  font-weight: 500;
   line-height: 60px;
   cursor: pointer;
   padding-left: 25px;
   transition: all 0.5s ease;
   color: var(--color-background);
-  z-index: 12;
+  z-index: 2;
+  overflow: hidden;
 }
 #experience .tablist .tablist-content .list label:hover {
   color: var(--color-experience);
@@ -305,6 +284,59 @@ nav ul li a:hover::before {
   color: var(--color-projects);
   position: relative;
   top: 10%;
+}
+#projects .projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+  position: relative;
+  top: 10%;
+}
+#projects .projects .project {
+  position: relative;
+}
+#projects .projects .project img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+}
+#projects .projects .project .project-desc {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-projects);
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+  transform: scale(0);
+}
+#projects .projects .project h3 {
+  margin-top: 1.5rem;
+}
+#projects .projects .project p {
+  margin: 1rem;
+}
+#projects .projects .project .project-link {
+  font-size: 30px;
+}
+#projects .projects .project .project-link i {
+  color: var(--color-background);
+  transition: all 0.2s ease-in-out;
+}
+#projects .projects .project .project-link i:hover {
+  transform: scale(130%);
+}
+#projects .projects .project:hover .project-desc {
+  opacity: 1;
+  transform: scale(1);
 }
 
 #contact h1 {

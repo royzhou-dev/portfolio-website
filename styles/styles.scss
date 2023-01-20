@@ -25,14 +25,14 @@ body {
 nav {
   position: fixed;
   width: 100%;
-  top: -10%;
+  top: 0%;
   background-color: var(--color-background);
   z-index: 10;
 
-  animation-name: fadeInNav;
-  animation-duration: 1s;
-  animation-delay: 3s;
-  animation-fill-mode: forwards;
+  // animation-name: fadeInNav;
+  // animation-duration: 1s;
+  // animation-delay: 3s;
+  // animation-fill-mode: forwards;
 
   @keyframes fadeInNav {
     100% {
@@ -80,26 +80,23 @@ nav {
 #experience,
 #projects,
 #contact {
+  position: relative;
   height: 1000px;
-  color: white;
-  margin-left: 30rem;
-  margin-right: 30rem;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 #home {
+  color: white;
+
   h1 {
-    position: absolute;
-    top: 40%;
+    position: relative;
+    top: 30%;
 
     font-size: 60px;
-    width: 27.4ch;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid;
-
-    animation: typing 3s steps(40),
-      blinking 0.5s step-end infinite alternate,
-      shiftUp 0.5s ease-in-out 3s 1 normal forwards;
+    // animation: typing 3s steps(40),
+    //   blinking 0.5s step-end infinite alternate,
+    //   shiftUp 0.5s ease-in-out 3s 1 normal forwards;
 
     @keyframes typing {
       from {
@@ -121,17 +118,15 @@ nav {
   }
 
   p {
-    position: absolute;
-    top: 110%;
-    opacity: 0;
-
-    width: 68rem;
+    position: relative;
+    top: 35%;
+    opacity: 1;
     font-size: 22px;
 
-    animation-name: fadeInBio;
-    animation-duration: 1s;
-    animation-delay: 3s;
-    animation-fill-mode: forwards;
+    // animation-name: fadeInBio;
+    // animation-duration: 1s;
+    // animation-delay: 3s;
+    // animation-fill-mode: forwards;
 
     @keyframes fadeInBio {
       100% {
@@ -198,7 +193,6 @@ nav {
 
     .tablist-title {
       font-size: 30px;
-      font-weight: 500;
       margin-bottom: 20px;
       color: var(--color-background);
     }
@@ -211,20 +205,20 @@ nav {
       .list {
         display: flex;
         flex-direction: column;
-        width: 20%;
+        width: 25%;
         margin-right: 50px;
         position: relative;
 
         label {
           height: 60px;
           font-size: 22px;
-          font-weight: 500;
           line-height: 60px;
           cursor: pointer;
           padding-left: 25px;
           transition: all 0.5s ease;
           color: var(--color-background);
-          z-index: 12;
+          z-index: 2;
+          overflow: hidden;
         }
 
         label:hover {
@@ -324,6 +318,70 @@ nav {
     position: relative;
     top: 10%;
   }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin-top: 3rem;
+
+    position: relative;
+    top: 10%;
+
+    .project {
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 15px;
+      }
+
+      .project-desc {
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-projects);
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        transition: all 0.4s ease-in-out;
+        opacity: 0;
+        transform: scale(0);
+      }
+
+      h3 {
+        margin-top: 1.5rem;
+      }
+
+      p {
+        margin: 1rem;
+      }
+
+      .project-link {
+        font-size: 30px;
+
+        i {
+          color: var(--color-background);
+          transition: all 0.2s ease-in-out;
+        }
+
+        i:hover {
+          transform: scale(130%);
+        }
+      }
+    }
+
+    .project:hover .project-desc {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 }
 
 #contact {
@@ -333,3 +391,5 @@ nav {
     top: 10%;
   }
 }
+
+@media only screen and (max-width: 400px) {}
