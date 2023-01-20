@@ -8,10 +8,10 @@
 :root {
   --color-background: #171c28;
 
-  --color-home: #00ade1;
-  --color-experience: #ff6493;
-  --color-projects: #ffdd1c;
-  --color-contact: #00dc82;
+  --color-home: #0096e4;
+  --color-experience: #f37fa1;
+  --color-projects: #f0cf2b;
+  --color-contact: #29c256;
 }
 
 html {
@@ -346,33 +346,39 @@ nav {
         left: 0;
         top: 0;
         border-radius: 15px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
 
         transition: all 0.4s ease-in-out;
         opacity: 0;
         transform: scale(0);
-      }
 
-      h3 {
-        margin-top: 1.5rem;
-      }
-
-      p {
-        margin: 1rem;
-      }
-
-      .project-link {
-        font-size: 30px;
-
-        i {
-          color: var(--color-background);
-          transition: all 0.2s ease-in-out;
+        h3 {
+          margin: 1rem;
         }
 
-        i:hover {
-          transform: scale(130%);
+        p {
+          margin: 1rem;
+        }
+
+        ul {
+          li {
+            font-family: monospace;
+          }
+        }
+
+        .project-link {
+          font-size: 30px;
+          text-align: center;
+          text-decoration: none;
+          margin: 1rem;
+
+          i {
+            color: var(--color-background);
+            transition: all 0.2s ease-in-out;
+          }
+
+          i:hover {
+            transform: scale(130%);
+          }
         }
       }
     }
@@ -389,6 +395,54 @@ nav {
     color: var(--color-contact);
     position: relative;
     top: 10%;
+  }
+
+  .container {
+    width: 100%;
+    height: 100vh;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    form {
+      background: white;
+      display: flex;
+      flex-direction: column;
+      padding: 2vw 4vw;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 10px;
+
+      h3 {
+        color: gray;
+        font-weight: 800;
+        margin-bottom: 20px;
+      }
+
+      input,
+      textarea {
+        border: 0;
+        margin: 10px;
+        padding: 20px;
+        outline: none;
+        background: white;
+        font-size: 16;
+      }
+
+      button {
+        padding: 15px;
+        background-color: peru;
+        color: white;
+        font-size: 18px;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+        width: 150px;
+        margin: 20px auto 0;
+        border-radius: 30px;
+      }
+    }
   }
 }
 

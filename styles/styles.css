@@ -6,10 +6,10 @@
 
 :root {
   --color-background: #171c28;
-  --color-home: #00ade1;
-  --color-experience: #ff6493;
-  --color-projects: #ffdd1c;
-  --color-contact: #00dc82;
+  --color-home: #0096e4;
+  --color-experience: #f37fa1;
+  --color-projects: #f0cf2b;
+  --color-contact: #29c256;
 }
 
 html {
@@ -311,27 +311,30 @@ nav ul li a:hover::before {
   left: 0;
   top: 0;
   border-radius: 15px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   transition: all 0.4s ease-in-out;
   opacity: 0;
   transform: scale(0);
 }
-#projects .projects .project h3 {
-  margin-top: 1.5rem;
-}
-#projects .projects .project p {
+#projects .projects .project .project-desc h3 {
   margin: 1rem;
 }
-#projects .projects .project .project-link {
-  font-size: 30px;
+#projects .projects .project .project-desc p {
+  margin: 1rem;
 }
-#projects .projects .project .project-link i {
+#projects .projects .project .project-desc ul li {
+  font-family: monospace;
+}
+#projects .projects .project .project-desc .project-link {
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 1rem;
+}
+#projects .projects .project .project-desc .project-link i {
   color: var(--color-background);
   transition: all 0.2s ease-in-out;
 }
-#projects .projects .project .project-link i:hover {
+#projects .projects .project .project-desc .project-link i:hover {
   transform: scale(130%);
 }
 #projects .projects .project:hover .project-desc {
@@ -343,4 +346,47 @@ nav ul li a:hover::before {
   color: var(--color-contact);
   position: relative;
   top: 10%;
+}
+#contact .container {
+  width: 100%;
+  height: 100vh;
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#contact .container form {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2vw 4vw;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+#contact .container form h3 {
+  color: gray;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+#contact .container form input,
+#contact .container form textarea {
+  border: 0;
+  margin: 10px;
+  padding: 20px;
+  outline: none;
+  background: white;
+  font-size: 16;
+}
+#contact .container form button {
+  padding: 15px;
+  background-color: peru;
+  color: white;
+  font-size: 18px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  width: 150px;
+  margin: 20px auto 0;
+  border-radius: 30px;
 }/*# sourceMappingURL=styles.css.map */

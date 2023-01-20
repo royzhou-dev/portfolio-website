@@ -168,13 +168,20 @@
             <div class="project">
                 <img src="images/pay.png" alt="">
                 <div class="project-desc">
-                    <h3>Project Name</h3>
+                    <h3>Competitiveness of Local Government Pay</h3>
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis sunt rem labore voluptatem
-                        deserunt delectus ducimus facilis dignissimos rerum itaque.
+                        A report on the competitiveness of local government pay which uses a
+                        variety of big data tools and technologies to process and analysis large datasets.
                     </p>
+                    <ul>
+                        <li>Java</li>
+                        <li>Scala</li>
+                        <li>Hadoop</li>
+                        <li>Hive</li>
+                        <li>Spark</li>
+                    </ul>
                     <div class="project-link">
-                        <a href="">
+                        <a href="https://github.com/royzhou-dev/Competitiveness-of-Local-Government-Pay">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
@@ -183,13 +190,17 @@
             <div class="project">
                 <img src="images/hands.png" alt="">
                 <div class="project-desc">
-                    <h3>Project Name</h3>
+                    <h3>Fingertip Position Estimations</h3>
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis sunt rem labore voluptatem
-                        deserunt delectus ducimus facilis dignissimos rerum itaque.
+                        A convolutional neural network that accepts images of a robotic hand and returns
+                        estimations of the position of each fingertip.
                     </p>
+                    <ul>
+                        <li>Python</li>
+                        <li>PyTorch</li>
+                    </ul>
                     <div class="project-link">
-                        <a href="">
+                        <a href="https://github.com/royzhou-dev/Fingertips-Position-Estimation">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
@@ -198,13 +209,18 @@
             <div class="project">
                 <img src="images/movies.png" alt="">
                 <div class="project-desc">
-                    <h3>Project Name</h3>
+                    <h3>IMDb Webscraper</h3>
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis sunt rem labore voluptatem
-                        deserunt delectus ducimus facilis dignissimos rerum itaque.
+                        A webscraper that compiles movie data from IMDb's "Top 1000" into a CSV.
                     </p>
+                    <ul>
+                        <li>Python</li>
+                        <li>Pytorch</li>
+                        <li>Beautiful Soup</li>
+                        <li>Requests</li>
+                    </ul>
                     <div class="project-link">
-                        <a href="">
+                        <a href="https://github.com/royzhou-dev/IMDb-Webscraper">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
@@ -213,13 +229,20 @@
             <div class="project">
                 <img src="images/stuy.jpg" alt="">
                 <div class="project-desc">
-                    <h3>Project Name</h3>
+                    <h3>Predicitve High School Admissions</h3>
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis sunt rem labore voluptatem
-                        deserunt delectus ducimus facilis dignissimos rerum itaque.
+                        An analysis of the factors relevant to admission into one of New York City's eight specialized
+                        high schools using machine learning and data science techniques.
                     </p>
+                    <ul>
+                        <li>Python</li>
+                        <li>pandas</li>
+                        <li>scikit-learn</li>
+                        <li>SciPy</li>
+                        <li>Matplotlib</li>
+                    </ul>
                     <div class="project-link">
-                        <a href="">
+                        <a href="https://github.com/royzhou-dev/NYC-Middle-Schools-Data-Analysis">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
@@ -231,8 +254,35 @@
 
     <section id="contact">
         <h1>Contact</h1>
-    </section>
+        <div class="container">
+            <form onsubmit="sendEmail(); reset(); return false">
+                <h3>GET IN TOUCH</h3>
 
+                <input type="text" id="name" placeholder="Your name" required>
+                <input type="text" id="email" placeholder="Your email" required>
+                <textarea id="message" rows="4" placeholder="Your message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "royzhou01@gmail.com",
+                Password: "703F8AEFCC22FBF36D6637D0C6F3B0B15E31",
+                To: 'royzhou01@gmail.com',
+                From: document.getElementById("email").value,
+                Subject: "New Contact Form Inquiry",
+                Body: "Name: " + document.getElementById("name").value
+                    + "<br> Email: " + document.getElementById("email").value
+                    + "<br> Message: " + document.getElementById("message").value
+            }).then(
+                message => alert("Message Sent Sucessfully")
+            );
+        }
+    </script>
 </body>
 
 </html>
