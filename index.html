@@ -16,15 +16,15 @@
 <body>
     <nav>
         <ul>
-            <li style="--color:#00ade1"><a href="#home" data-text="&nbsp;home">&nbsp;home</a></li>
-            <li style="--color:#ff6493"><a href="#experience" data-text="&nbsp;experience">&nbsp;experience</a></li>
-            <li style="--color:#ffdd1c"><a href="#projects" data-text="&nbsp;projects">&nbsp;projects</a></li>
-            <li style="--color:#00dc82"><a href="#contact" data-text="&nbsp;contact">&nbsp;contact</a></li>
+            <li style="--color:#0096e4"><a href="#home" data-text="&nbsp;home">&nbsp;home</a></li>
+            <li style="--color:#f37fa1"><a href="#experience" data-text="&nbsp;experience">&nbsp;experience</a></li>
+            <li style="--color:#f0cf2b"><a href="#projects" data-text="&nbsp;projects">&nbsp;projects</a></li>
+            <li style="--color:#29c256"><a href="#contact" data-text="&nbsp;contact">&nbsp;contact</a></li>
         </ul>
     </nav>
 
     <section id="home">
-        <h1>Hi, I'm <span style="color: #00ade1;">Roy</span>. Welcome to my portfolio
+        <h1>Hi, I'm <span style="color: #0096e4;">Roy</span>. Welcome to my portfolio
         </h1>
         <p>
             I'm currently a fourth year student at NYU studying computer science
@@ -254,35 +254,29 @@
 
     <section id="contact">
         <h1>Contact</h1>
-        <div class="container">
-            <form onsubmit="sendEmail(); reset(); return false">
-                <h3>GET IN TOUCH</h3>
+        <form action="https://formsubmit.co/e665e498f0c5c5f760032765061f94f5" method="POST">
+            <h1>Feel free to reach out!</h1>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Your name" required>
 
-                <input type="text" id="name" placeholder="Your name" required>
-                <input type="text" id="email" placeholder="Your email" required>
-                <textarea id="message" rows="4" placeholder="Your message"></textarea>
-                <button type="submit">Send</button>
-            </form>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Your email" required>
+
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" placeholder="Your message" rows="10"></textarea>
+
+            <input type="hidden" name="_captcha" value="false">
+            <div class="center">
+                <input type="submit" value="Send Message">
+        </form>
         </div>
     </section>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-        function sendEmail() {
-            Email.send({
-                Host: "smtp.elasticemail.com",
-                Username: "royzhou01@gmail.com",
-                Password: "703F8AEFCC22FBF36D6637D0C6F3B0B15E31",
-                To: 'royzhou01@gmail.com',
-                From: document.getElementById("email").value,
-                Subject: "New Contact Form Inquiry",
-                Body: "Name: " + document.getElementById("name").value
-                    + "<br> Email: " + document.getElementById("email").value
-                    + "<br> Message: " + document.getElementById("message").value
-            }).then(
-                message => alert("Message Sent Sucessfully")
-            );
-        }
-    </script>
+
+    <section id="footer">
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-github"></i>
+        <i class="fa-brands fa-medium"></i>
+    </section>
 </body>
 
 </html>
