@@ -23,9 +23,18 @@ body {
 nav {
   position: fixed;
   width: 100%;
-  top: 0%;
+  top: -20%;
   background-color: var(--color-background);
   z-index: 10;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px;
+  -webkit-animation-name: fadeInNav;
+          animation-name: fadeInNav;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 @-webkit-keyframes fadeInNav {
   100% {
@@ -85,70 +94,94 @@ nav ul li a:hover::before {
   position: relative;
   top: 30%;
   font-size: 60px;
+  opacity: 0;
+  top: 80%;
+  -webkit-animation-name: fadeInHead;
+          animation-name: fadeInHead;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
-@-webkit-keyframes typing {
-  from {
-    width: 0;
-  }
-}
-@keyframes typing {
-  from {
-    width: 0;
-  }
-}
-@-webkit-keyframes blinking {
-  50% {
-    border-color: transparent;
-  }
-}
-@keyframes blinking {
-  50% {
-    border-color: transparent;
-  }
-}
-@-webkit-keyframes shiftUp {
+@-webkit-keyframes fadeInHead {
   100% {
+    opacity: 1;
     top: 30%;
   }
 }
-@keyframes shiftUp {
+@keyframes fadeInHead {
   100% {
+    opacity: 1;
     top: 30%;
   }
+}
+#home h1 .name {
+  color: var(--color-home);
 }
 #home p {
   position: relative;
   top: 35%;
-  opacity: 1;
   font-size: 22px;
+  opacity: 0;
+  top: 110%;
+  -webkit-animation-name: fadeInBio;
+          animation-name: fadeInBio;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 @-webkit-keyframes fadeInBio {
   100% {
     opacity: 1;
-    top: 40%;
+    top: 32%;
   }
 }
 @keyframes fadeInBio {
   100% {
     opacity: 1;
-    top: 40%;
+    top: 32%;
   }
 }
-#home p button {
+#home button {
   position: relative;
   text-align: center;
   margin-top: 15px;
   padding: 12px 40px;
   background: none;
   border: 2px solid var(--color-home);
+  border-radius: 4px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 1em;
   font-family: sans-serif;
   cursor: pointer;
   color: white;
+  opacity: 0;
+  top: 110%;
+  -webkit-animation-name: fadeInButton;
+          animation-name: fadeInButton;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
-#home p button::before {
+@-webkit-keyframes fadeInButton {
+  100% {
+    opacity: 1;
+    top: 33%;
+  }
+}
+@keyframes fadeInButton {
+  100% {
+    opacity: 1;
+    top: 33%;
+  }
+}
+#home button::before {
   content: "";
   position: absolute;
   left: 0;
@@ -157,12 +190,12 @@ nav ul li a:hover::before {
   height: 100%;
   z-index: -1;
   background-color: var(--color-home);
-  transition: transform 0.7s;
+  transition: transform 0.6s;
   transform-origin: 0 0;
   transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
   transform: scaleX(0);
 }
-#home p button:hover::before {
+#home button:hover::before {
   transform: scaleX(1);
 }
 
@@ -177,7 +210,7 @@ nav ul li a:hover::before {
   width: 100%;
   padding: 40px 50px 40px 40px;
   background: white;
-  border-radius: 12px;
+  border-radius: 9px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 #experience .tablist .tablist-title {
@@ -187,7 +220,6 @@ nav ul li a:hover::before {
 }
 #experience .tablist .tablist-content {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 #experience .tablist .tablist-content .list {
@@ -217,7 +249,7 @@ nav ul li a:hover::before {
   top: 0;
   height: 60px;
   width: 100%;
-  border-radius: 12px;
+  border-radius: 4px;
   background: var(--color-experience);
   transition: all 0.4s ease;
 }
@@ -234,9 +266,30 @@ nav ul li a:hover::before {
   font-weight: 500;
   color: var(--color-background);
 }
-#experience .tablist .tablist-content .text-content .text p {
-  text-align: justify;
+#experience .tablist .tablist-content .text-content .text .title a {
+  position: relative;
+  color: var(--color-experience);
+  text-decoration: none;
+}
+#experience .tablist .tablist-content .text-content .text .title a:after {
+  content: "";
+  position: absolute;
+  background-color: var(--color-experience);
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: -2px;
+  transition: all 0.5s ease-in-out;
+}
+#experience .tablist .tablist-content .text-content .text .title a:hover:after {
+  width: 100%;
+}
+#experience .tablist .tablist-content .text-content .text ul {
+  font-size: 20px;
   color: var(--color-background);
+}
+#experience .tablist .tablist-content .text-content .text ul li {
+  margin: 10px;
 }
 #experience .tablist .tablist-content .text-content .job1 {
   display: block;
@@ -301,7 +354,7 @@ nav ul li a:hover::before {
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 15px;
+  border-radius: 6px;
 }
 #projects .projects .project .project-desc {
   width: 100%;
@@ -310,7 +363,7 @@ nav ul li a:hover::before {
   position: absolute;
   left: 0;
   top: 0;
-  border-radius: 15px;
+  border-radius: 6px;
   transition: all 0.4s ease-in-out;
   opacity: 0;
   transform: scale(0);
@@ -352,7 +405,6 @@ nav ul li a:hover::before {
   background: var(--color-background);
   margin: 17vh auto 0 auto;
   padding: 40px;
-  border-radius: 3px;
   box-sizing: border-box;
 }
 #contact form h1 {
@@ -400,7 +452,7 @@ nav ul li a:hover::before {
   color: white;
   font-size: 17px;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 4px;
   border-bottom: none;
 }
 
