@@ -99,13 +99,13 @@ nav {
 #projects,
 #contact {
   position: relative;
-  height: 1000px;
   margin-left: 20%;
   margin-right: 20%;
 }
 
 #home {
   color: white;
+  height: 100vh;
 
   h1 {
     position: relative;
@@ -217,7 +217,6 @@ nav {
     padding: 40px 50px 40px 40px;
     background: white;
     border-radius: 9px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 
     .tablist-title {
       font-size: 30px;
@@ -514,12 +513,125 @@ nav {
   }
 }
 
-
 #footer {
-  height: 500px;
+  height: 100px;
   color: white;
   text-align: center;
   font-size: 35px;
+
+  .links {
+    position: relative;
+    top: 30%;
+    word-spacing: 1.5rem;
+
+    i {
+      transition: all 0.2s ease-in-out;
+    }
+
+    i:hover {
+      transform: scale(120%);
+    }
+  }
 }
 
-@media only screen and (max-width: 400px) {}
+@media screen and (max-width: 1500px) {
+
+  #home,
+  #experience,
+  #projects,
+  #contact {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  #projects {
+    height: 1200px;
+
+    .projects {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  #contact {
+    form {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+
+  #home,
+  #experience,
+  #projects,
+  #contact {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  #experience {
+    height: 600px;
+
+    .tablist {
+      padding: 40px 0 40px 0px;
+
+      .tablist-title {
+        padding-left: 40px;
+      }
+
+      .tablist-content {
+        padding-left: 40px;
+        display: inline-block;
+
+        .list {
+          display: inline;
+          margin-right: 50px;
+
+          label {
+            padding-left: 0px;
+            padding-right: 30px;
+          }
+        }
+
+        .indicator {
+          display: none;
+        }
+
+        .text-content {
+          width: 80%;
+          height: 100%;
+          white-space: normal;
+
+          .text {
+            display: none;
+
+            .title {
+              font-size: 25px;
+              margin-bottom: 10px;
+              font-weight: 500;
+              color: var(--color-background);
+            }
+          }
+        }
+      }
+
+      #job1:checked~.list label.job1,
+      #job2:checked~.list label.job2,
+      #job3:checked~.list label.job3,
+      #job4:checked~.list label.job4,
+      #job5:checked~.list label.job5 {
+        color: var(--color-experience);
+      }
+    }
+  }
+
+  #projects {
+    height: 2300px;
+
+    .projects {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {}

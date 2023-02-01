@@ -99,13 +99,13 @@ nav ul li a:hover::before {
 #projects,
 #contact {
   position: relative;
-  height: 1000px;
   margin-left: 20%;
   margin-right: 20%;
 }
 
 #home {
   color: white;
+  height: 100vh;
 }
 #home h1 {
   position: relative;
@@ -228,7 +228,6 @@ nav ul li a:hover::before {
   padding: 40px 50px 40px 40px;
   background: white;
   border-radius: 9px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 #experience .tablist .tablist-title {
   font-size: 30px;
@@ -474,8 +473,98 @@ nav ul li a:hover::before {
 }
 
 #footer {
-  height: 500px;
+  height: 100px;
   color: white;
   text-align: center;
   font-size: 35px;
+}
+#footer .links {
+  position: relative;
+  top: 30%;
+  word-spacing: 1.5rem;
+}
+#footer .links i {
+  transition: all 0.2s ease-in-out;
+}
+#footer .links i:hover {
+  transform: scale(120%);
+}
+
+@media screen and (max-width: 1500px) {
+  #home,
+#experience,
+#projects,
+#contact {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  #projects {
+    height: 1200px;
+  }
+  #projects .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #contact form {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1100px) {
+  #home,
+#experience,
+#projects,
+#contact {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  #experience {
+    height: 600px;
+  }
+  #experience .tablist {
+    padding: 40px 0 40px 0px;
+  }
+  #experience .tablist .tablist-title {
+    padding-left: 40px;
+  }
+  #experience .tablist .tablist-content {
+    padding-left: 40px;
+    display: inline-block;
+  }
+  #experience .tablist .tablist-content .list {
+    display: inline;
+    margin-right: 50px;
+  }
+  #experience .tablist .tablist-content .list label {
+    padding-left: 0px;
+    padding-right: 30px;
+  }
+  #experience .tablist .tablist-content .indicator {
+    display: none;
+  }
+  #experience .tablist .tablist-content .text-content {
+    width: 80%;
+    height: 100%;
+    white-space: normal;
+  }
+  #experience .tablist .tablist-content .text-content .text {
+    display: none;
+  }
+  #experience .tablist .tablist-content .text-content .text .title {
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: var(--color-background);
+  }
+  #experience .tablist #job1:checked ~ .list label.job1,
+#experience .tablist #job2:checked ~ .list label.job2,
+#experience .tablist #job3:checked ~ .list label.job3,
+#experience .tablist #job4:checked ~ .list label.job4,
+#experience .tablist #job5:checked ~ .list label.job5 {
+    color: var(--color-experience);
+  }
+  #projects {
+    height: 2300px;
+  }
+  #projects .projects {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }/*# sourceMappingURL=styles.css.map */
