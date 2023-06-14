@@ -9,9 +9,9 @@
   --color-background: #171c28;
 
   --color-home: #0096e4;
-  --color-experience: #f37fa1;
-  --color-projects: #f0cf2b;
-  --color-contact: #29c256;
+  --color-experience: #29c256;
+  --color-projects: #f37fa1;
+  --color-contact: #f0cf2b;
 }
 
 html {
@@ -101,6 +101,7 @@ nav {
   position: relative;
   margin-left: 20%;
   margin-right: 20%;
+  height: 1000px;
 }
 
 #home {
@@ -375,6 +376,7 @@ nav {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
     margin-top: 3rem;
+    color: var(--color-background);
 
     position: relative;
     top: 10%;
@@ -504,7 +506,7 @@ nav {
       width: 90%;
       max-width: 200px;
       background: var(--color-contact);
-      color: white;
+      color: var(--color-background);
       font-size: 17px;
       cursor: pointer;
       border-radius: 4px;
@@ -524,114 +526,17 @@ nav {
     top: 30%;
     word-spacing: 1.5rem;
 
-    i {
-      transition: all 0.2s ease-in-out;
-    }
-
-    i:hover {
-      transform: scale(120%);
-    }
-  }
-}
-
-@media screen and (max-width: 1500px) {
-
-  #home,
-  #experience,
-  #projects,
-  #contact {
-    margin-left: 15%;
-    margin-right: 15%;
-  }
-
-  #projects {
-    height: 1200px;
-
-    .projects {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  #contact {
-    form {
-      width: 100%;
-    }
-  }
-}
-
-@media screen and (max-width: 1100px) {
-
-  #home,
-  #experience,
-  #projects,
-  #contact {
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-
-  #experience {
-    height: 600px;
-
-    .tablist {
-      padding: 40px 0 40px 0px;
-
-      .tablist-title {
-        padding-left: 40px;
+    a {
+      text-decoration: none;
+      
+      i {
+        transition: all 0.2s ease-in-out;
+        color:white ;
       }
-
-      .tablist-content {
-        padding-left: 40px;
-        display: inline-block;
-
-        .list {
-          display: inline;
-          margin-right: 50px;
-
-          label {
-            padding-left: 0px;
-            padding-right: 30px;
-          }
-        }
-
-        .indicator {
-          display: none;
-        }
-
-        .text-content {
-          width: 80%;
-          height: 100%;
-          white-space: normal;
-
-          .text {
-            display: none;
-
-            .title {
-              font-size: 25px;
-              margin-bottom: 10px;
-              font-weight: 500;
-              color: var(--color-background);
-            }
-          }
-        }
-      }
-
-      #job1:checked~.list label.job1,
-      #job2:checked~.list label.job2,
-      #job3:checked~.list label.job3,
-      #job4:checked~.list label.job4,
-      #job5:checked~.list label.job5 {
-        color: var(--color-experience);
+  
+      i:hover {
+        transform: scale(120%);
       }
     }
   }
-
-  #projects {
-    height: 2300px;
-
-    .projects {
-      grid-template-columns: repeat(1, 1fr);
-    }
-  }
 }
-
-@media screen and (max-width: 450px) {}
